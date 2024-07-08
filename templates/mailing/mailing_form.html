@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Create Mailing{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Create Mailing</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+{% endblock %}

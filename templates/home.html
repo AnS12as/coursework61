@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to the Mailing Service</h1>
+        <p class="lead">This is a simple service for managing email campaigns.</p>
+        <hr class="my-4">
+        <p>Use the navigation bar to register, login, and manage your mailings.</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Total mailings</h3>
+            <p>{{ total_mailings }}</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Active mailings</h3>
+            <p>{{ active_mailings }}</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Unique clients</h3>
+            <p>{{ unique_clients }}</p>
+        </div>
+    </div>
+    <h2>Random Blog Posts</h2>
+    <ul>
+        {% for post in random_posts %}
+            <li><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Mailing Detail{% endblock %}
+
+{% block content %}
+    <h1>Mailing Detail</h1>
+    <p>Start time: {{ mailing.start_datetime }}</p>
+    <p>Periodicity: {{ mailing.get_periodicity_display }}</p>
+    <p>Status: {{ mailing.get_status_display }}</p>
+    <p>Message: {{ mailing.message.subject }}</p>
+    <p>Clients:</p>
+    <ul>
+        {% for client in mailing.clients.all %}
+            <li>{{ client.full_name }} - {{ client.email }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'mailing_update' mailing.pk %}">Edit</a>
+    <form method="post" action="{% url 'mailing_delete' mailing.pk %}">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{% url 'mailing_list' %}">Back to list</a>
+{% endblock %}
