@@ -1,50 +1,26 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
+# Python
 *.py[cod]
-*$py.class
-
-# C extensions
+__pycache__/
 *.so
 
-# Django stuff:
+# Django
 *.log
 *.pot
 *.pyc
-*.pyo
-*.sqlite3
-*.pdb
-*.egg-info/
-*.coverage
-.coverage.*
-
-# Migrations
-**/migrations/*
-
-# Django static files
-static/
-staticfiles/
-
-# Media files
+*.swp
+db.sqlite3
 media/
 
 # Environments
-env/
-venv/
+.env
 .venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
 
 # IDEs
 .idea/
 .vscode/
-*.swp
-*~
-
-# Test and coverage results
-htmlcov/
-.tox/
-.nox/
-
-# My local settings
-local_settings.py
-
-# Others
-*.DS_Store
+*.iml
